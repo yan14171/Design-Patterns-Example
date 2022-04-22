@@ -1,6 +1,12 @@
 <Query Kind="Statements" />
 
 //prototype
+
+
+CarFactory.GetAuto("semi").Dump();
+CarFactory.GetAuto("family").Dump();
+
+
 class Auto
 {
 	public Auto(string Number)
@@ -67,7 +73,3 @@ static class CarFactory
 		return proto.Clone();
 	}
 }
-
-
-CarFactory.GetAuto("semi").Dump();
-CarFactory.GetAuto("family").Dump();
