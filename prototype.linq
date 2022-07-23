@@ -56,6 +56,7 @@ class Family : Auto
 	}
 }
 
+//1 варіант використання
 static class CarFactory
 {
 	private static Dictionary<string, Auto> protos;
@@ -71,5 +72,19 @@ static class CarFactory
 	{
 		var proto = protos[type];
 		return proto.Clone();
+	}
+}
+
+//2 варіант використання
+static class ExampleGenerator{
+	static List<Auto> CopyAutos(List<Auto> autosToCopy)
+	{
+		var copiedAutos = new List<Auto>();
+		foreach (var element in autosToCopy)
+			copiedAutos.Add(element.Clone());
+			//завдяки тому, що у кожного, хто реалізує інтерфейс класу Auto, є клонування,
+			//ми можемо не думати про окремі характеристики кожного класу, перекладаючи цю 
+			//burden на плечі самих об'єктів
+		return copiedAutos;
 	}
 }
